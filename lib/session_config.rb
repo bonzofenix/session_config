@@ -16,7 +16,6 @@ module SessionConfig
     conf = {}
     Dir.mkdir(session_config_dir) unless Dir.exists?(session_config_dir)
     conf = YAML.load_file(conf_file_path) if File.exists?(conf_file_path)
-    puts "Changing #{key} to #{val}" unless conf[key].nil?
     conf[key] = val
     File.open(conf_file_path, 'w'){|f| f.write(conf.to_yaml) }
   end

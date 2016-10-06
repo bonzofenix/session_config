@@ -29,12 +29,6 @@ describe SessionConfig do
           ExampleClass.set_conf :foo, 'baz'
         end.to change{ ExampleClass.get_conf :foo }.from('bar').to('baz')
       end
-
-      it 'should warn user that the conf is being changed' do
-        expect do
-          ExampleClass.set_conf :foo, 'baz'
-        end.to output(/Changing foo to baz/).to_stdout
-      end
     end
   end
 
